@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ===== .NET / Visual Studio (Sweepbench) =====
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.dotCover
+*.dotTrace
+TestResults/
+artifacts/
+*.binlog
+
