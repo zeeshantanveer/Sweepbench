@@ -6,4 +6,5 @@ public enum CleanCategory
     BrowserCache,
     RecycleBin,
     WindowsUpdateCache,
+    Registry,
 }

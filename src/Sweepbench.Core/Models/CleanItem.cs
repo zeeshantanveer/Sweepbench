@@ -12,4 +12,5 @@ public sealed record CleanItem(
     long SizeBytes,
     CleanCategory Category,
     RiskLevel Risk,
-    CleanItemKind Kind);
+    CleanItemKind Kind,
+    RegistryTarget? Registry = null);

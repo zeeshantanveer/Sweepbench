@@ -22,7 +22,11 @@ public sealed partial class CleanItemViewModel : ObservableObject
 
     public string Description => Item.Description;
 
-    public string SizeText => ByteFormatter.Format(Item.SizeBytes);
+    // Registry items carry a symbolic weight (value count), not real disk bytes —
+    // formatting that as "3 B" would misrepresent it, so it gets its own label.
+    public string SizeText => Item.Category == CleanCategory.Registry
+        ? $"{Item.SizeBytes} value{(Item.SizeBytes == 1 ? "" : "s")}"
+        : ByteFormatter.Format(Item.SizeBytes);
 
     public long SizeBytes => Item.SizeBytes;
 

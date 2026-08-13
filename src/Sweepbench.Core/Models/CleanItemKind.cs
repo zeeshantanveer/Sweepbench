@@ -8,4 +8,7 @@ public enum CleanItemKind
 
     /// <summary>Not a filesystem path — executing it empties the Recycle Bin.</summary>
     RecycleBinEmpty,
+
+    /// <summary>A registry value or subkey — see <see cref="CleanItem.Registry"/>.</summary>
+    RegistryValue,
 }

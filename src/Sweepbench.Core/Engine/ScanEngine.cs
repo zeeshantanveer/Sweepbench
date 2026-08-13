@@ -26,6 +26,13 @@ public sealed class ScanEngine
         new WindowsUpdateCacheCleaner(),
     ]);
 
+    public static ScanEngine CreateRegistryScan() => new(
+    [
+        new RegistryMruCleaner(),
+        new RegistryOrphanedAppPathsCleaner(),
+        new RegistryOrphanedUninstallCleaner(),
+    ]);
+
     public async Task<ScanResult> ScanAsync(CancellationToken cancellationToken = default)
     {
         var stopwatch = Stopwatch.StartNew();
